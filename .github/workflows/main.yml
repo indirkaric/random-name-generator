@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["${{USING_COVERAGE}}"]
+        python-version: ["3.10.4"]
 
     steps:
       - uses: "actions/checkout@v3"
