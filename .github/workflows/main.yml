@@ -27,7 +27,7 @@ jobs:
         run: |
           python -VV
           python -m site
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade pip
           python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
           echo "Installation is completed"          
 
