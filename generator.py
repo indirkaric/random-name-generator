@@ -33,6 +33,3 @@ class Generator:
         Generator.generate_name()
         print(datetime.now())
         print("Generated name is {0}".format(Generator.__username))
-    
-
-
