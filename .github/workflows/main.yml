@@ -9,20 +9,20 @@ on:
 
 jobs:
   tests:
-    name: "Python 3.6"
+    name: "Python 3.10.4"
     runs-on: "ubuntu-latest"
     env:
-      USING_COVERAGE: '3.6,3.8'
+      USING_COVERAGE: '3.10.4,3.8'
 
     strategy:
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "pypy3"]
+        python-version: ["3.10.4", "pypy3"]
 
     steps:
       - uses: "actions/checkout@v2"
       - uses: "actions/setup-python@v2"
         with:
-          python-version: "3.6"
+          python-version: "3.10.4"
       - name: "Install dependencies"
         run: |
           python -VV
@@ -31,5 +31,5 @@ jobs:
           python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
           echo "Installation is completed"          
 
-      - name: "Run tox targets for 3.6"
-        run: "python main.py"
+      - name: "Run tox targets for 3.10.4"
+        run: "python3 main.py"
