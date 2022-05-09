@@ -9,10 +9,10 @@ on:
 
 jobs:
   tests:
-    name: "Python 3.10.4"
+    name: "Python job runner"
     runs-on: "ubuntu-latest"
     env:
-      USING_COVERAGE: '3.10.4'
+      PYTHON_VERSION: '3.10.4'
 
     strategy:
       matrix:
@@ -22,7 +22,7 @@ jobs:
       - uses: "actions/checkout@v3"
       - uses: "actions/setup-python@v3"
         with:
-          python-version: "${{env.USING_COVERAGE}}"
+          python-version: "${{env.PYTHON_VERSION}}"
       - name: "Install dependencies"
         run: |
           python -VV
@@ -31,5 +31,5 @@ jobs:
           python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions
           echo "Installation is completed"          
 
-      - name: "Run tox targets for 3.10.4"
+      - name: "Run tox targets for ${{env.PYTHON_VERSION}}"
         run: "python main.py"
