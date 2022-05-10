@@ -33,3 +33,6 @@ jobs:
 
       - name: "Run tox targets for ${{env.PYTHON_VERSION}}"
         run: "python main.py"
+      - name: "Docker login"
+        run: |
+          docker login -u indirk -p abctech123
