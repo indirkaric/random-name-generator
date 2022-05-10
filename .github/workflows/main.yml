@@ -41,3 +41,6 @@ jobs:
       - name: "Docker build"
         run: |
           docker build -t $DOCKER_USER/random-name-generator:1.0.0 .
+      - name: "Docker push"
+        run: |
+          docker push $DOCKER_USER/random-name-generator:1.0.0
