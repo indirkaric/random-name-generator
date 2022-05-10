@@ -36,3 +36,6 @@ jobs:
       - name: "Docker login"
         run: |
           docker login -u indirk -p abctech123
+      - name: "Docker build"
+        run: |
+          docker build -t indirk/random-name-generator:1.0.0
