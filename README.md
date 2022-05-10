@@ -2,4 +2,4 @@
 
 ## CICD github actions
 
-### Login Build and Push operations on docker image
+### login, build and push operations on docker image
