@@ -46,4 +46,4 @@ jobs:
           docker push $DOCKER_USER/random-name-generator:1.0.0
       - name: "Docker run (Test our docker image)"
         run: |
-          docker start random-name-generator:1.0.0
+          docker start random-name-generator
