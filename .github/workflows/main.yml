@@ -13,6 +13,8 @@ jobs:
     runs-on: "ubuntu-latest"
     env:
       PYTHON_VERSION: '3.10.4'
+      DOCKER_USER: ${{secrets.DOCKER_USER}}
+      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
     strategy:
       matrix:
@@ -35,7 +37,7 @@ jobs:
         run: "python main.py"
       - name: "Docker login"
         run: |
-          docker login -u indirk -p abctech123
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: "Docker build"
         run: |
           docker build -t indirk/random-name-generator:1.0.0 .
